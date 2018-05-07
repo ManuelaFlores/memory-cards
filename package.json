@@ -7,11 +7,10 @@
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "scripts" : {
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js --progress --profile --colors",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -22,6 +21,7 @@
     "babel-preset-react-boilerplate": "^1.1.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.0",
     "open-browser-webpack-plugin": "0.0.5",
     "style-loader": "^0.21.0",
     "webpack": "^4.7.0",
